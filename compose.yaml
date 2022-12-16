@@ -1,12 +1,14 @@
 services:
   openresty:
-    image: bitnami/openresty
+    image: openresty/openresty
     volumes:
-      - './nginx.conf:/opt/bitnami/openresty/nginx/conf/server_blocks/nginx.conf:ro'
-      - './index.lua:/opt/bitnami/openresty/nginx/conf/lua/index.lua:ro'
+      - ./nginx:/etc/nginx/conf.d
     ports:
-      - '3000:3000'
-      - '5000:5000'
-      - '8000:8000'
+      - 3000:3000
+      - 5000:5000
+      - 8000:8000
+    depends_on:
+      - redis
   redis:
     image: redis
+    container_name: redis

@@ -1,5 +1,6 @@
 {
   "Lua.runtime.version": "LuaJIT",
   "Lua.workspace.library": ["${3rd}/OpenResty/library"],
-  "Lua.telemetry.enable": false
+  "Lua.telemetry.enable": false,
+  "Lua.workspace.checkThirdParty": false
 }
